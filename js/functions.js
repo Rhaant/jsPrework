@@ -14,11 +14,20 @@ function checkResult(playerInput, i){
 	}
 	else if ( playerInput > i) {
 		if ( i == 1){printMessage('wygrałeś')}
-		else if (playerInput == 2) {printMessage('przegrałeś')}
+		else if (i == 0 && playerInput == 2) {printMessage('przegrałeś')}
 		else {printMessage('wygraleś')}
 	}
 	else if (playerInput < i) {
-		if (i == 1){printMessage('przegrałeś')}
-		else {printMessage('wygrales')}
+		if (playerInput == 1){printMessage('przegrałeś')}
+		else if (playerInput == 0 && i == 2) {printMessage('wygrałeś')}
+		else {printMessage('przegrales')}
 	}
+}
+
+function letsPlayTheGame (){
+	i = Math.floor(Math.random()*computerMoves.length);
+	console.log(i);
+    clearMessages();
+    printMessage(`komputer wybrał ${computerMoves[i]}`);
+    checkResult(playerInput, i);
 }

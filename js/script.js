@@ -3,31 +3,23 @@ const buttonPaper = document.getElementById('button-paper');
 const buttonScissors = document.getElementById('button-scissors');
 
 let computerMoves = ["kamień", "papier", "nożyce"];
-let i = Math.floor(Math.random()*computerMoves.length);
+let i;
 let playerInput;
 
  
-console.log(i);
-console.log(playerInput)
 
 buttonPaper.addEventListener('click', () => {
     playerInput = 1;
-    i = Math.floor(Math.random()*computerMoves.length);
-    clearMessages();
-    printMessage(`komputer wybrał ${computerMoves[i]}`);
-    checkResult(playerInput, i);
+    letsPlayTheGame(i, playerInput);
 })
 buttonRock.addEventListener('click', () => {
     playerInput = 0;
-    i = Math.floor(Math.random()*computerMoves.length);
-    clearMessages();
-    printMessage(`komputer wybrał ${computerMoves[i]}`);
-    checkResult(playerInput, i);
+    letsPlayTheGame(i, playerInput);
+
 })
 buttonScissors.addEventListener('click', () => {
     playerInput = 2;
-    i = Math.floor(Math.random()*computerMoves.length);
-    clearMessages();
-    printMessage(`komputer wybrał ${computerMoves[i]}`);
-    checkResult(playerInput, i);
+    letsPlayTheGame(i, playerInput);
 })
+
+console.log(i);
